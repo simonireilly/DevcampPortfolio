@@ -17,3 +17,9 @@
 /yarn-error.log
 
 .byebug_history
+
+.idea/workspace.xml
+
+# Don't show secrets
+
+config/secrets.yml

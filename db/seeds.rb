@@ -1,7 +1,7 @@
 10.times do |blog|
   Blog.create!(
     title: "My blog posts #{blog}",
-    body: (:lorem_ipsum).words(100)
+    body: Forgery(:lorem_ipsum).words(100)
   )
 end
 
@@ -20,7 +20,7 @@ puts '5 skills created'
   Portfolio.create!(
     title: "Rails #{portfolio_item}",
     subtitle: "Rails portfolio item subtitle #{portfolio_item}",
-    body: (:lorem_ipsum).words(100),
+    body: Forgery(:lorem_ipsum).words(100),
     main_image: 'https://picsum.photos/600/400',
     thumb_image: 'https://picsum.photos/350/200'
   )

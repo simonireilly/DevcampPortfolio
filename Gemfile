@@ -15,6 +15,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'forgery', '~> 0.7.0'
+gem 'friendly_id', '~> 5.1.0'
 
 
 group :development, :test do

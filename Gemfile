@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'forgery', '~> 0.7.0'
 gem 'friendly_id', '~> 5.1.0'
 
+gem 'devise', '~> 4.4', '>= 4.4.1'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

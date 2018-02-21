@@ -20,7 +20,7 @@
         <%= link_to 'Register', new_user_registration_path%>
     <% end %>
     <%= yield %>
-    <%= render 'shared/nav' %>
+    <%= render 'shared/nav', location: 'bottom' %>
     <%= content_tag(:p,"Thanks for visiting me from #{session[:source]} ".html_safe) if session[:source] %>
   </body>
 </html>

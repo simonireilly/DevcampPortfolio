@@ -15,6 +15,6 @@
     <%= render 'shared/nav', location: 'top' %>
     <%= login_helper %>
     <%= yield %>
-    <%= content_tag(:p,"Thanks for visiting me from #{session[:source]} ".html_safe) if session[:source] %>
+    <%= source_helper('application') %>
   </body>
 </html>

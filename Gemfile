@@ -21,7 +21,8 @@ gem 'devise', '~> 4.4', '>= 4.4.1'
 
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', '~> 10.0', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-byebug', '~> 3.6'
 end
 
 group :development do

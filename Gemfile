@@ -21,7 +21,7 @@ gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
-gem 'reilly_view_tool', git: 'https://github.com/simonireilly/reilly_view_tool'
+gem 'reilly_view_tool', '~> 0.1.0'
 
 
 group :development, :test do

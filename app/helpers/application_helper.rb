@@ -1,4 +1,9 @@
 module ApplicationHelper
+
+  def copyright_generator
+    @copyright = ReillyViewTool::Renderer.copyright 'Simon Reilly', 'All rights reserved'
+  end
+
   def login_helper
     if current_user.is_a?(User)
       link_to 'log out', destroy_user_session_path, method: :delete

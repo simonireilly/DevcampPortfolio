@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/simonireilly/reilly_view_tool
+  revision: 12b1d7096d9307023519c3c72aeee20f09306770
+  specs:
+    reilly_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -204,6 +210,7 @@ DEPENDENCIES
   pry-byebug (~> 3.6)
   puma (~> 3.7)
   rails (~> 5.1.4)
+  reilly_view_tool!
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

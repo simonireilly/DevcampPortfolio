@@ -2,6 +2,9 @@
 <html>
   <head>
     <title><%= @page_title %></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <meta name="keywords" content="<%= @seo_keywords.html_safe %>"/>
 
@@ -9,7 +12,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="text-center">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render 'shared/nav', location: 'top' %>

@@ -4,13 +4,12 @@ module ApplicationHelper
     @copyright = ReillyViewTool::Renderer.copyright 'Simon Reilly', 'All rights reserved'
   end
 
-  def login_helper
+  def login_helper style, class: style
     if current_user.is_a?(GuestUser)
-      (link_to 'Log in', new_user_session_path) +
-        content_tag(:br) +
-        (link_to 'Register', new_user_registration_path)
+      (link_to 'Log in', new_user_session_path, class: style) +
+        (link_to 'Register', new_user_registration_path, class: style)
     else
-      link_to 'log out', destroy_user_session_path, method: :delete
+      link_to 'log out', destroy_user_session_path, class: style, method: :delete
     end
   end
 

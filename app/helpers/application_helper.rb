@@ -4,7 +4,7 @@ module ApplicationHelper
     @copyright = ReillyViewTool::Renderer.copyright 'Simon Reilly', 'All rights reserved'
   end
 
-  def login_helper style, class: style
+  def login_helper style = 'active-link'
     if current_user.is_a?(GuestUser)
       (link_to 'Log in', new_user_session_path, class: style) +
         (link_to 'Register', new_user_registration_path, class: style)

@@ -23,7 +23,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 gem 'reilly_view_tool', '~> 0.1.0'
 gem 'petergate', '~> 1.8', '>= 1.8.1'
-
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do
   gem 'byebug', '~> 10.0', platforms: [:mri, :mingw, :x64_mingw]

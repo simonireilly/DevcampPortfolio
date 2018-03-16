@@ -27,9 +27,7 @@ puts '5 skills created'
   Portfolio.create!(
     title: "Rails #{portfolio_item}",
     subtitle: "Ruby on Rails",
-    body: Forgery(:lorem_ipsum).words(100),
-    main_image: 'https://picsum.photos/600/400',
-    thumb_image: 'https://picsum.photos/350/200'
+    body: Forgery(:lorem_ipsum).words(100)
   )
 end
 
@@ -37,9 +35,7 @@ end
   Portfolio.create!(
       title: "Rails #{portfolio_item}",
       subtitle: "Angular",
-      body: Forgery(:lorem_ipsum).words(100),
-      main_image: 'https://picsum.photos/600/400',
-      thumb_image: 'https://picsum.photos/350/200'
+      body: Forgery(:lorem_ipsum).words(100)
   )
 end
 

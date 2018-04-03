@@ -13,11 +13,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+
 # Forge seed data
 gem 'forgery', '~> 0.7.0'
 gem 'friendly_id', '~> 5.1.0'
 
+# Authentication
 gem 'devise', '~> 4.4', '>= 4.4.1'
+# Styles
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Custom view helper in gem
@@ -28,15 +31,18 @@ gem 'petergate', '~> 1.8', '>= 1.8.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.3'
 # Pagination
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
-
+# Drag and drop features with JQuery
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+# File storage on AWS S3
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'carrierwave-aws', '~> 1.3'
 gem 'mini_magick', '~> 4.8'
-gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'#
-
+# Local environmental variables file
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 # Form helpers
 gem 'cocoon', '~> 1.2', '>= 1.2.11'
+# Notifications
+gem 'gritter', '~> 1.2'
 
 
 group :development, :test do

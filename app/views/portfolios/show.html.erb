@@ -4,6 +4,10 @@
       <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), class: 'img-fluid' %>
     </div>
     <div class="col-md-5">
+
+      <%= content_tag :span, (link_to 'Edit', edit_portfolio_path(@portfolio_item)),
+                      class: 'float-right btn btn-light' if logged_in?(:site_admin) %>
+
       <h1><%= @portfolio_item.title %></h1>
       <hr/>
       <em><%= @portfolio_item.subtitle %></em>
@@ -14,7 +18,6 @@
       <% @portfolio_item.technologies.each do |t| %>
         <p><%= t.name%></p>
       <% end %>
-
 
     </div>
   </div>

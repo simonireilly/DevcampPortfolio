@@ -43,6 +43,8 @@ gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.11'
 # Notifications
 gem 'gritter', '~> 1.2'
+# Twitter API
+gem 'twitter', '~> 6.2'
 
 
 group :development, :test do

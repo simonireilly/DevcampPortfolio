@@ -45,6 +45,8 @@ gem 'cocoon', '~> 1.2', '>= 1.2.11'
 gem 'gritter', '~> 1.2'
 # Twitter API
 gem 'twitter', '~> 6.2'
+# Redis database for actioncable
+gem 'redis', '~> 4.0', '>= 4.0.1'
 
 
 group :development, :test do

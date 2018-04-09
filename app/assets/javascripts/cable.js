@@ -5,6 +5,7 @@
 //= require_self
 //= require_tree ./channels
 
+// Look an IIFE; You Don't KNow JS!!!
 (function() {
   this.App || (this.App = {});
 

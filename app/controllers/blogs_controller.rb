@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_blog, only: [:show, :update, :destroy, :toggle_status]
   layout 'blog'
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
@@ -17,13 +17,17 @@ class BlogsController < ApplicationController
 
   def new
     @blog = Blog.new
+    @blog.build_topic
   end
 
   def edit
+    @blog = Blog.includes(:topic).friendly.find(params[:id])
   end
 
   def create
     @blog = Blog.new(blog_params)
+    @topic = Topic.find_by(title: blog_params[:topic_attributes][:title])
+    @blog.topic_id = @topic.id unless @topic.nil?
 
     respond_to do |format|
       if @blog.save
@@ -35,6 +39,7 @@ class BlogsController < ApplicationController
   end
 
   def update
+    update_topic_id
     respond_to do |format|
       if @blog.update(blog_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
@@ -62,6 +67,13 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :body, :status, :topic_id)
+    params.require(:blog).permit(:title, :body, :status, topic_attributes: [:title, :id])
+  end
+
+  def update_topic_id
+    # Topic can exist, so we need to change the foreign key, not update its attributes
+    @topic = Topic.find_by(title: blog_params[:topic_attributes][:title]) || Topic.new
+    params[:blog][:topic_attributes][:id] = @topic.id unless @topic.nil?
+    @blog.topic_id = @topic.id unless @topic.nil?
   end
 end

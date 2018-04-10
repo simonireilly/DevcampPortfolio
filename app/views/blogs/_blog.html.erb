@@ -3,10 +3,10 @@
   <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at - Time.now) %></p>
   <% if logged_in?(:site_admin) %>
     <p class="blog-post-meta">
-      <%= link_to blog.status.titlecase, toggle_status_blog_path(blog) %> /
+      / <%= link_to blog.status.titlecase, toggle_status_blog_path(blog) %> /
       <%= link_to 'Edit', edit_blog_path(blog) %> /
       <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %> /
     </p>
   <% end %>
-  <p><%= blog.body %></p>
+  <p><%= simple_format(truncate(blog.body, length: 300)) %></p>
 </div>

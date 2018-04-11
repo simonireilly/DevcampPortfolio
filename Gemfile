@@ -47,6 +47,10 @@ gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 6.2'
 # Redis database for actioncable
 gem 'redis', '~> 4.0', '>= 4.0.1'
+# Allows for markdown
+gem 'redcarpet', '~> 3.4'
+# Provides syntax highlighting
+gem 'coderay', '~> 1.1', '>= 1.1.2'
 
 
 group :development, :test do

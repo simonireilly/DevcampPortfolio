@@ -1,0 +1,7 @@
+<div class="col-md-8 blog-main">
+  <%= content_tag :h1, @topic.title %>
+  <%= paginate @blogs %>
+  <%= link_to 'Write a new blog', new_blog_path if logged_in?(:site_admin) %>
+  <%= render @blogs %>
+  <%= paginate @blogs %>
+</div><!-- /.blog-main -->

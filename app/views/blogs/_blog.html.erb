@@ -8,5 +8,5 @@
       <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %> /
     </p>
   <% end %>
-  <p><%= simple_format(truncate(blog.body, length: 300)) %></p>
+  <p><%= markdown(truncate(blog.body, length: 300)) %></p>
 </div>

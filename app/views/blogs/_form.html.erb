@@ -12,7 +12,11 @@
       <%= form.fields_for :topic do |f| %>
 
         <%= f.text_field :title, class: 'form-control',
-                         placeholder: 'Topic' %>
+                         placeholder: 'Topic', list: 'browsers',
+                         autocomplete: 'nope'%>
+        <datalist id="browsers">
+          <%= options_from_collection_for_select(Topic.all, 'title', 'title') %>
+        </datalist>
 
       <% end %>
 

@@ -1,18 +1,27 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :update, :destroy, :toggle_status]
+  before_action :set_topics
   layout 'blog'
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    if logged_in?(:site_admin)
+      @blogs = Blog.page(params[:page]).per(5)
+    else
+      @blogs = Blog.published.page(params[:page]).per(5)
+    end
   end
 
   def show
+    if logged_in?(:site_admin) || @blog.published?
     @blog = Blog.includes(:comments).friendly.find(params[:id])
     @comment = Comment.new
 
     @page_title = @blog.title
     @seo_keywords = @blog.body
+    else
+      redirect_to blogs_path, notice: 'You do not have access to that page'
+    end
   end
 
   def new
@@ -64,6 +73,10 @@ class BlogsController < ApplicationController
   private
   def set_blog
     @blog = Blog.friendly.find(params[:id])
+  end
+
+  def set_topics
+    @topics = Topic.all
   end
 
   def blog_params

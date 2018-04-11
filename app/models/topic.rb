@@ -3,4 +3,7 @@ class Topic < ApplicationRecord
   validates :title, presence: true,
                     uniqueness: true,
                     length: { minimum: 2, maximum: 25 }
+  def self.with_blogs
+    includes(:blogs).where.not(blogs: {id: nil})
+  end
 end

@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :update, :destroy, :toggle_status]
-  before_action :set_topics
+  before_action :set_topics, except: [:create, :update, :destroy, :toggle_status]
   layout 'blog'
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :toggle_status]}, site_admin: :all
 
@@ -76,7 +76,7 @@ class BlogsController < ApplicationController
   end
 
   def set_topics
-    @topics = Topic.all
+    @topics = Topic.with_blogs
   end
 
   def blog_params

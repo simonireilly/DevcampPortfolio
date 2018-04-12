@@ -8,8 +8,10 @@
     <%= csrf_meta_tags %>
     <meta name="keywords" content="<%= @seo_keywords.html_safe %>"/>
 
+    <%= favicon_link_tag 'other_favicon' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body class="text-center">

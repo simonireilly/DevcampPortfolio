@@ -1,0 +1,15 @@
+<% if logged_in?(:site_admin) %>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb h4 float-right">
+      <li class="breadcrumb-item mx-2">
+        <%= link_to fa_icon('file-text'), toggle_status_blog_path(blog), style: blog_status_colour(blog) %>
+      </li>
+      <li class="breadcrumb-item mx-2">
+        <%= link_to fa_icon('pencil-square-o'), edit_blog_path(blog) %>
+      </li>
+      <li class="breadcrumb-item mx-2">
+        <%= link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </li>
+    </ol>
+  </nav>
+<% end %>

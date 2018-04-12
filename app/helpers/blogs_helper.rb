@@ -1,4 +1,11 @@
 module BlogsHelper
+
+  def blog_status_colour(blog)
+    if blog.draft?
+      return 'color: red'
+    end
+  end
+
   def gravatar_helper user
     image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", width: 40
   end

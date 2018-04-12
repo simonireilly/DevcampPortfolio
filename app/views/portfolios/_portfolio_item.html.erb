@@ -1,8 +1,11 @@
-<div class="card m-2 box-shadow" data-id="<%= portfolio_item.id %>">
-  <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb'), class: 'card-img-top' %>
-  <div class="card-text">
-    <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span>
-    <%= portfolio_item.subtitle %>
+<div class="col-md-4">
+  <div class="card m-2 box-shadow" data-id="<%= portfolio_item.id %>">
+    <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb'), class: 'card-img-top' %>
+    <div class="card-text p-3">
+      <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span>
+      <%= portfolio_item.subtitle %>
+    </div>
   </div>
 </div>
+
 

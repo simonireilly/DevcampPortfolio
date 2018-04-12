@@ -4,6 +4,6 @@ class Topic < ApplicationRecord
                     uniqueness: true,
                     length: { minimum: 2, maximum: 25 }
   def self.with_blogs
-    includes(:blogs).where.not(blogs: {id: nil})
+    includes(:blogs).where.not(blogs: {id: nil, status: 'draft'})
   end
 end

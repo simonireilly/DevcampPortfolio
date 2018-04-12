@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title><%= @page_title %></title>
-  <%= csrf_meta_tags %>
-  <meta name="keywords" content="<%= @seo_keywords.html_safe %>"/>
-  <%= favicon_link_tag 'other_favicon' %>
-  <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+    <meta name="keywords" content="<%= @seo_keywords.html_safe %>"/>
+    <%= favicon_link_tag 'other_favicon' %>
+    <%= stylesheet_link_tag    'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<body>
-<%= render 'shared/blog_nav' %>
-<main role="main" class="container">
-  <%= render 'blogs/partials/blog_header' %>
-  <div class="row">
-    <%= yield %>
+  <body>
+  <%= render 'shared/blog_nav' %>
+  <main role="main" class="container">
+    <%= render 'blogs/partials/blog_header' %>
+    <div class="row">
+      <%= yield %>
 
-    <%= render 'shared/blog_sidebar' %>
+      <%= render 'shared/blog_sidebar' %>
 
-  </div>
-</main>
-<%= render 'shared/blog_footer' %>
-</body>
-<%= alerts %>
+    </div>
+  </main>
+  <%= render 'shared/blog_footer' %>
+  </body>
+  <%= alerts %>
 </html>

@@ -4,6 +4,18 @@
 
 /* stylelint-disable selector-list-comma-newline-after */
 
+@font-face {
+  font-family: 'Lato', sans-serif;
+  src: font-url('Lato-Regular.ttf')
+}
+
+
+html,
+body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
 .blog-header {
   line-height: 1;
   border-bottom: 1px solid #e5e5e5;
@@ -18,9 +30,8 @@
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-}
+
+
 
 .display-4 {
   font-size: 2.5rem;

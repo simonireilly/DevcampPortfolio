@@ -1,6 +1,12 @@
 @import "bootstrap";
 @import "gritter";
 
+@font-face {
+  font-family: 'Lato', sans-serif;
+  src: font-url('Lato-Regular.ttf')
+}
+
+
 /*
  * Globals
  */
@@ -30,6 +36,7 @@ a:hover {
 html,
 body {
   height: 100%;
+  font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -47,6 +54,7 @@ body {
 .cover-container {
   width: 60em;
 }
+
 
 
 /*

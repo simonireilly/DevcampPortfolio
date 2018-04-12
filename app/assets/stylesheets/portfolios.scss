@@ -2,6 +2,20 @@
 @import "jquery-ui";
 @import "gritter";
 
+@font-face {
+  font-family: 'Lato', sans-serif;
+  src: font-url('Lato-Regular.ttf')
+}
+
+
+html,
+body {
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+
+
 :root {
   --jumbotron-padding-y: 3rem;
 }

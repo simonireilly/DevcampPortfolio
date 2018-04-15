@@ -1,26 +1,12 @@
-<div class="card bg-dark p-4 text-left">
+<h1 class="cover-heading">An Engineer and a Web Developer</h1>
+<hr/>
+<div class="text-left">
   <div class="row">
-    <div class="col-md-4">
-      <%= image_tag 'profile.jpeg', alt: 'profile image', class: 'img-fluid img-thumbnail' %>
+    <div class="col-md-3 text-center my-4">
+      <%= image_tag 'profile.jpeg', alt: 'profile image', class: 'img-fluid rounded-circle' %>
     </div>
-    <div class="col-md-2">
-      <div class="skills m-1">
-        <% @skills.each do |skill| %>
-          <%= content_tag :span, skill.title %>
-            <div class="progress">
-              <div
-                class="progress-bar progress-bar-striped bg-warning"
-                role="progressbar"
-                aria-valuenow="<%= skill.percent_utilized %>"
-                aria-valuemax="100"
-                style="width: <%= skill.percent_utilized %>%;"
-              >
-              </div>
-            </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="col-md-6">
+
+    <div class="col-md-7">
       <p class="">
         As a web developer and engineer I have years of experience.
         But before I set out on this path I was a working professional at a large company.
@@ -53,17 +39,35 @@
         Education
       </button>
     </div>
+    <div class="col-md-2">
+      <div class="skills m-1">
+        <p class="strong">My Skills</p>
+        <% @skills.each do |skill| %>
+          <%= content_tag :span, skill.title %>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped bg-warning"
+              role="progressbar"
+              aria-valuenow="<%= skill.percent_utilized %>"
+              aria-valuemax="100"
+              style="width: <%= skill.percent_utilized %>%;"
+            >
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <div class="col-md-12">
       <div class="collapse" id="jobHistory">
         <% 3.times do | | %>
-          <%= (content_tag :div, 'Job History', class: 'card bg-dark my-2 p-2') %>
+          <%= (content_tag :div, 'Job History', class: 'card bg-dark my-3 p-2') %>
         <% end %>
       </div>
 
 
       <div class="collapse" id="education">
         <% 3.times do | | %>
-          <%= (content_tag :div, 'Education', class: 'card bg-dark my-2 p-2') %>
+          <%= (content_tag :div, 'Education', class: 'card bg-dark my-3 p-2') %>
         <% end %>
       </div>
     </div>
@@ -72,3 +76,4 @@
 
 
 </div>
+<hr/>

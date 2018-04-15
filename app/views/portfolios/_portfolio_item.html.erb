@@ -3,7 +3,13 @@
     <%= image_tag portfolio_img(portfolio_item.thumb_image, 'thumb'), class: 'card-img-top' %>
     <div class="card-text p-3">
       <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span>
-      <%= portfolio_item.subtitle %>
+
+      <span class="pull-right">
+        <%= link_to fa_icon('pencil-square-o'), edit_portfolio_path(portfolio_item),
+            class: 'mx-2' %>
+        <%= link_to fa_icon('trash'), portfolio_path(portfolio_item), method: :delete,
+                    data: { confirm: 'Are you sure?' }, class: 'mx-2'  %>
+      </span>
     </div>
   </div>
 </div>
